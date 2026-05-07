@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background</title>
+    <style>
+            body{
+                margin: 0;
+            }
+            .container{
+                height: 100vh;
+                width: 100vw;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+               background-image: radial-gradient(circle, #444, #000);
+            }
+            .semi-container-one{
+                height: 20vh;
+                width: 100vw;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .btn-one{
+                height: 30px;
+                width: 140px;
+                border-radius: 7px;
+                border: 4px solid black;
+                box-shadow: 0px 0px 12px white;
+            }
+            .semi-container-two{
+                height: 60vh;
+                width: 100vw;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+            .semi-container-three{
+                height: 20vh;
+                width: 100vw;
+            }
+            .tv-border{
+                height: 40vh;
+                width: 60vw;
+                background-color: white;
+                border-radius: 14px;
+                background-color: black;
+                box-shadow: 0px 0px 25px white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .tv-display{
+                height: calc(40vh - 14px);
+                width: calc(60vw - 14px);
+                background-color: white;
+                border-radius: 14px;
+                background-size: cover;
+                background-position: center;
+            }
+            .tv-fit {
+            background-size: contain !important;
+            background-repeat: no-repeat !important;
+            background-position: center !important;
+             }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="semi-container-one">
+            <button class="btn-one" id="btnOne"><b>TV-REMOTE</b></button>
+        </div>
+        <div class="semi-container-two">
+            <div class="tv-border">
+                <div class="tv-display" id="tvDisplay"></div>
+            </div>
+        </div>
+        <div class="semi-container-three"></div>
+    </div>
+<script>
+    let a=1;
+    
+    const displayFrame=document.getElementById('tvDisplay');
+    const btnClick=document.getElementById('btnOne');
+    btnClick.addEventListener('click',()=>{
+        if ( a===1 ){
+            displayFrame.style.backgroundImage=`url("dayOne-imgPack/phtoOne.jpg")`; 
+            displayFrame.classList.add("tv-fit")
+            a++;          
+        }
+    })
+
+    
+</script>
+    
+</body>
+</html>
